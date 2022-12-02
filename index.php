@@ -19,20 +19,37 @@
         <div class="card-body">
             <h2 class="card-title text-center">TEST GRAMMARY CHECK</h2>
             <hr>
-            <div class="row">
-                <label for="textArea1">Example 1</label>
-                <div class="col-md-12 mb-3">
-                    <div class="form-group">
-                        <textarea class="form-control" name="textArea1" id="textArea1" rows="3"></textarea>
+            <form class="p-4" id="editorForm" method="post" autocomplete="off">
+                <div class="row">
+                    <label for="textArea1">Example 1</label>
+                    <div class="col-md-12 mb-3">
+                        <div class="form-group">
+                            <textarea class="form-control" name="textArea1" id="textArea1" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <label for="textArea2">Example 2</label>
+                    <div class="col-md-12 mb-3">
+                        <div class="form-group">
+                            <textarea class="form-control" name="textArea2" id="textArea2" rows="3"></textarea>
+                        </div>
                     </div>
                 </div>
-                <label for="textArea2">Example 2</label>
-                <div class="col-md-12 mb-3">
-                    <div class="form-group">
-                        <textarea class="form-control" name="textArea2" id="textArea2" rows="3"></textarea>
-                    </div>
-                </div>
-            </div>
+            </form>
+
+            <!-- <?php
+            require "../grammar/phpspellcheck/include.php";    //   "phpspellcheck/include.php" // Full file path to the include.php file in the phpspellcheck Folder
+
+            $mySpell = new SpellCheckButton();
+            $mySpell->InstallationPath = "/Innovatank/grammar/phpspellcheck/";      // "/phpspellcheck/" //  Relative URL of phpspellcheck within your site
+            $mySpell->Fields = "ALL";      // id or 'ALL' or 'EDITORS' or "TEXTAREA" or 'TEXTINPUTS'
+            echo $mySpell->SpellImageButton();      // Render
+
+            $mySpell = new SpellAsYouType();
+            $mySpell->InstallationPath = "/Innovatank/grammar/phpspellcheck/";
+            $mySpell->Fields = "ALL";
+            echo $mySpell->Activate();
+            ?> -->
+
             <hr>
             <form class="p-4" id="resultForm" autocomplete="off">
                 <div class="row">
@@ -64,14 +81,14 @@
                 <div class="col-md-2">
                     <div class="input-group">
                         <div class="d-grid">
-                            <button class="btn btn-primary" id="btnGrade">Grade Essay</button>
+                            <button class="btn btn-primary" type="button" id="btnGrade">Grade Essay</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-2">
                     <div class="input-group">
                         <div class="d-grid">
-                            <button class="btn btn-warning" id="btnNew">New Essay</button>
+                            <button class="btn btn-warning" type="button" id="btnNew">New Essay</button>
                         </div>
                     </div>
                 </div>
@@ -81,6 +98,7 @@
     <footer class="page-footer" style="text-align: center;">
         <p class="mb-0">Copyright © <?php echo date('Y'); ?>. All right reserved.</p>
     </footer>
+    <!-- <script type='text/javascript' src='../grammar/phpspellcheck/include.js' ></script> -->
     <script src="http://localhost/Innovatank/grammar/assets/js/ckeditor.js"></script>
     <script src="http://localhost/Innovatank/grammar/assets/js/functions.js"></script>
     <script src="http://localhost/Innovatank/grammar/assets/js/all.min.js"></script>

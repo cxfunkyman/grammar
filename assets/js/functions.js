@@ -1,44 +1,33 @@
-const textArea1 = document.querySelector('#textArea1');
-const textArea2 = document.querySelector('#textArea2');
-const errorAmount = document.querySelector('#errorAmount');
-const essayGrade = document.querySelector('#essayGrade');
-const finalGrade = document.querySelector('#finalGrade');
-const btnGrade = document.querySelector('#btnGrade');
-const btnNew = document.querySelector('#btnNew');
 
-const resultForm = document.querySelector('#resultForm');
+//JavaScript Alternative Code
+// REM: Include /localhost/Innovatank/grammar/phpspellcheck/include.js 
 
-ClassicEditor
-    .create(document.querySelector('#textArea1'), {
-        toolbar: {
-            items: [
-                'selectAll', '|',
-                'heading', '|',
-                'bold', 'italic',
-                'outdent', 'indent', '|',
-                'undo', 'redo', '|',
-                'link', 'blockQuote', 'insertTable', 'mediaEmbed'
-            ],
-            shouldNotGroupWhenFull: true
-        },
+// let mySpell = new LiveSpellInstance();
+// mySpell.Fields = "ALL"
+// mySpell.DrawSpellImageButton()
+// mySpell.ActivateAsYouType()
+
+document.addEventListener("DOMContentLoaded", function(event) 
+{
+	//console.log("Web page fully Loaded. HTML, Javascript, CSS, Images, Iframes and objects are fully loaded.");
+    const url = 'http://localhost/Innovatank/grammar/controller/GrammarCheck.php/';
+    //instaciate the object XMLHttpRequest
+    const http = new XMLHttpRequest();
+    //open connection this time POST
+    http.open('POST', url, true);
+    //send data
+    http.send();
+    //verify status
+})
+
+function customAlert(type, msg) {
+    Swal.fire({
+        toast: true,
+        position: 'top-right',
+        icon: type,
+        title: msg,
+        showConfirmButton: false,
+        timer: 1500
     })
-    .catch(error => {
-        console.error(error);
-    });
-ClassicEditor
-    .create(document.querySelector('#textArea2'), {
-        toolbar: {
-            items: [
-                'selectAll', '|',
-                'heading', '|',
-                'bold', 'italic',
-                'outdent', 'indent', '|',
-                'undo', 'redo', '|',
-                'link', 'blockQuote', 'insertTable', 'mediaEmbed'
-            ],
-            shouldNotGroupWhenFull: true
-        },
-    })
-    .catch(error => {
-        console.error(error);
-    });
+}
+
